@@ -1,0 +1,44 @@
+run:
+  timeout: 3m
+  go: '1.23'
+
+
+linters:
+  enable:
+    - govet
+    - errcheck
+    - staticcheck
+    - unused
+    - gosimple
+    - unused
+    - revive
+    - gosec
+    - unconvert
+    - goconst
+    - misspell
+    - unparam
+    - prealloc
+    - exportloopref
+    - gochecknoinits
+    - gocritic
+    - dupl
+    - gocyclo
+    - goimports
+    - ineffassign
+    - gofumpt
+    - asciicheck
+    - mnd
+    - err113
+    - tparallel
+  fast: false
+
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - gocyclo
+        - errcheck
+        - dupl
+        - gosec
+        - scopelint
+        - goconst
